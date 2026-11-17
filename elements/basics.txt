@@ -1,0 +1,103 @@
+<!--
+  BASICS.TXT: the starter elements. Paint with them, read them, change them.
+
+  Every element starts with ## and a name (lowercase letters, numbers and
+  dashes). Under the name, any of these lines:
+
+    color: orange, #e2c290        one or more colors: names, or # codes
+    moves: falls                  stays, falls (piles up like sand),
+                                  flows (spreads like water), or
+                                  rises (floats up like smoke)
+    weight: 3                     heavier things sink through lighter ones
+                                  (if you leave it out: falls 3, flows 2, rises 1)
+    lasts: 40                     disappears after 40 frames (60 frames is
+                                  about one second), or lasts: 20-60
+    then becomes: smoke           ...or turns into smoke when its time is up
+
+    becomes fire when touching lava (20%)   changes ITSELF
+    turns water into steam (20%)            changes what it TOUCHES
+    turns empty into smoke (5%)             "empty" means blank space
+
+  The % is the chance it happens each frame. Leave it off for 100%.
+
+  Lines inside these comment marks are notes. The sandbox never reads them.
+-->
+by: CS 1101
+
+## sand
+<!-- The simplest kind of element: some colors and a way to move. -->
+color: #e2c290, #d4b483, #c9a96e
+moves: falls
+
+## water
+color: #2f7fd8, #3b8de6
+moves: flows
+
+## stone
+color: #7d7d7d, #6e6e6e, #8a8a8a
+moves: stays
+
+## wood
+color: #8b5a2b, #7a4a22
+moves: stays
+becomes fire when touching fire (15%)
+becomes fire when touching lava (30%)
+
+## fire
+<!-- Fire is lighter than everything, so it rises fast, and it doesn't last. -->
+color: orangered, #ff8c00, #ffc300
+moves: rises
+weight: 0.5
+lasts: 8-30
+becomes steam when touching water
+turns empty into smoke (1%)
+
+## smoke
+color: #6b6b6b, #808080, #5a5a5a
+moves: rises
+lasts: 30-90
+
+## steam
+<!-- When steam's time is up, it turns back into water: rain! -->
+color: #dfe9f0, #c8d6e0
+moves: rises
+weight: 0.8
+lasts: 120-300
+then becomes: water
+
+## lava
+<!-- Heavier than water, so it sinks under it. -->
+color: orangered, #e03a00, #ff6a00
+moves: flows
+weight: 2.5
+turns water into steam (40%)
+turns ice into water (50%)
+becomes stone when touching water (15%)
+
+## oil
+<!-- Lighter than water, so it floats on top. And it burns. -->
+color: #4a3214, #5c4019
+moves: flows
+weight: 1
+becomes fire when touching fire (40%)
+becomes fire when touching lava (50%)
+
+## seed
+color: #c8a165, sienna
+moves: falls
+becomes plant when touching water (5%)
+
+## plant
+<!-- Plants drink the water next to them, and grow into it. -->
+color: seagreen, mediumseagreen, forestgreen
+moves: stays
+turns water into plant (2%)
+becomes fire when touching fire (25%)
+becomes fire when touching lava (50%)
+
+## ice
+color: #bfe6ff, #a8dcff
+moves: stays
+turns water into ice (0.1%)
+becomes water when touching fire (40%)
+becomes water when touching steam (2%)

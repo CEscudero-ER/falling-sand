@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Falling Sand</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 4'%3E%3Crect width='4' height='4' fill='%230e1322'/%3E%3Crect y='2' width='4' height='2' fill='%23e2c290'/%3E%3Crect x='1' y='1' width='2' height='1' fill='%23e2c290'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="engine/style.css">
+</head>
+<body class="theme-night">
+<div id="lab">
+  <header id="top">
+    <div>
+      <h1 id="title">Loading the sandbox…</h1>
+      <p id="byline"></p>
+    </div>
+    <button id="btn-problems" type="button">Checking…</button>
+  </header>
+  <div id="notice" hidden></div>
+  <div id="stage">
+    <canvas id="world" width="200" height="150" aria-label="The sandbox. Pick an element below, then drag here to paint with it."></canvas>
+  </div>
+  <p id="status"><span id="under"></span><span id="counts"></span></p>
+  <div id="palette" role="toolbar" aria-label="Elements"></div>
+  <p id="about" aria-live="polite"></p>
+</div>
+<nav id="bar" aria-label="Sandbox controls">
+  <button id="btn-pause" type="button" aria-pressed="false">Pause</button>
+  <button id="btn-step" type="button">Step</button>
+  <button id="btn-clear" type="button">Clear</button>
+  <label class="speed">Speed
+    <select id="speed">
+      <option value="0.25">Slow motion</option>
+      <option value="1" selected>Normal</option>
+      <option value="2">Fast</option>
+      <option value="4">Very fast</option>
+    </select>
+  </label>
+  <span class="brushes" role="group" aria-label="Brush size">Brush
+    <button type="button" data-brush="0" title="Small brush: 1 cell">S</button><button type="button" data-brush="1" title="Medium brush: 3 cells across">M</button><button type="button" data-brush="2" title="Large brush: 7 cells across">L</button>
+  </span>
+  <button id="btn-share" type="button">Share this world</button>
+  <button id="btn-draft" type="button">Test a draft</button>
+</nav>
+<p id="help"><kbd>Space</kbd> pause &middot; <kbd>N</kbd> one step &middot; <kbd>1</kbd>–<kbd>9</kbd> pick an element &middot; <kbd>E</kbd> eraser &middot; <kbd>B</kbd> brush size</p>
+<div id="panel" hidden role="dialog" aria-modal="true" aria-labelledby="panel-title">
+  <div id="panel-box">
+    <div id="panel-head"><h2 id="panel-title"></h2><button id="panel-close" type="button" aria-label="Close">×</button></div>
+    <div id="panel-body"></div>
+  </div>
+</div>
+
+<!-- The engine. The elements themselves live in the elements/ folder. -->
+<script src="engine/elements.js"></script>
+<script src="engine/world.js"></script>
+<script src="engine/app.js"></script>
+</body>
+</html>

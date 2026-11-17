@@ -1,0 +1,18 @@
+<!--
+  LIST.TXT: the sandbox's name, its look, and which element files to load.
+
+  title:   the name at the top of the page
+  theme:   night, day, space, or paper
+
+  Then the element files, one per line. They load in this order, and their
+  elements show up in the palette in this order.
+
+  Made a new element file? Add its name here, or the sandbox won't load it.
+  Several people edit this file, so two pull requests can both change it at
+  once. If GitHub says there's a conflict, see "When something goes wrong"
+  in the README. (Usually the answer is: keep both lines.)
+-->
+title: The Sandbox
+theme: night
+
+basics.txt
