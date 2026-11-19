@@ -3,3 +3,15 @@ by: Gaby
 ## mercury
 color: silver, #C0C0C0
 moves: flows
+weight: 3
+becomes mercury-vapor when touching fire (10%)
+becomes mercury-vapor when touching lava (80%)
+becomes mercury-vapor when touching steam (1%)
+
+## mercury-vapor
+color: #c9cdd1, #e0e3e6, #b5bbc2
+moves: rises
+weight: 1
+becomes mercury when touching water (0.5%)
+becomes mercury when touching ice (5%)
+becomes mercury when touching stone (0.1%)
