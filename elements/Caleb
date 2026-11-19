@@ -1,0 +1,12 @@
+by: Caleb Escudero
+
+## Acid
+color: green, #6fdc4a
+moves: flows
+weight: 2
+turns stone into empty (0.2%)
+turns wood into empty (1%)
+turns plant into empty (5%)
+turns sand into empty (0.001%)
+turns plant into empty (5%)
+becomes smoke when touching water (10%)
