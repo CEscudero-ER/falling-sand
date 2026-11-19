@@ -13,7 +13,7 @@
   in the README. (Usually the answer is: keep both lines.)
 -->
 title: The Sandbox
-theme: night
+theme: paper
 
 basics.txt
 gaby.txt
